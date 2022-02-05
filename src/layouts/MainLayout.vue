@@ -1,117 +1,91 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
+  <q-layout view="lHh Lpr lff">
+    <q-header :class="{ 'transparent text-black': $route.path == '/' }">
+      <q-toolbar :class="{ 'bg-white text-black': $route.path != '/' }">
+        <q-toolbar-title
+          class="q-ml-xl q-pt-md q-pb-md text-h4 text-weight-bold"
+        >
+          Murphy Septic Inspections
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn stretch flat label="Home" to="/" />
+        <q-btn stretch flat label="About" to="/about" />
+        <q-btn stretch flat label="Buyers" to="/buyers" />
+        <q-btn stretch flat label="Homeowners" to="/homeowners" />
+        <q-btn stretch flat label="Contact" to="/contact" />
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+    <q-footer class="bg-black" position="bottom">
+      <!-- Social Links -->
+      <div class="q-pa-md text-center">
+        <q-btn
+          flat
+          v-for="link in socialLinks"
+          :key="link.name"
+          :size="link.size"
+          :class="link.class"
+          :icon="link.name"
+          type="a"
+          :href="link.route"
+          target="__blank"
+        />
+      </div>
+      <div class="row">
+        <!-- HOPE Identity -->
+        <div class="col-12 text-center" style="word-spacing: 3px">
+          <p>© Murphy Septic Inspections LLC 2021</p>
+        </div>
+      </div>
+    </q-footer>
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: "MainLayout",
 
-  components: {
-    EssentialLink
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
+  setup() {
+    const socialLinks = ref([
+      {
+        name: "fab fa-facebook",
+        class: "q-pa-sm",
+        size: "lg",
+        route: "",
+      },
+      {
+        name: "fab fa-instagram",
+        class: "q-pa-sm",
+        size: "lg",
+        route: "",
+      },
+      {
+        name: "fab fa-twitter",
+        class: "q-pa-sm",
+        size: "lg",
+        route: "",
+      },
+      {
+        name: "fab fa-linkedin",
+        class: "q-pa-sm",
+        size: "lg",
+        route: "https://www.linkedin.com/company/giftedsoftware",
+      },
+    ]);
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-})
+      socialLinks,
+    };
+  },
+});
 </script>
+
+<style>
+.q-page-container {
+  padding-top: 0 !important;
+}
+</style>
