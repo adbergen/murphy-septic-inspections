@@ -365,10 +365,13 @@
             <q-input filled v-model="text" label="Email" />
           </q-intersection>
         </div>
-            <q-btn class="col-12 q-pa-md q-my-md" color="white" text-color="black" label="Submit" />
-        
+        <q-btn
+          class="col-12 q-pa-md q-my-md"
+          color="white"
+          text-color="black"
+          label="Submit"
+        />
       </div>
-      
     </div>
   </q-page>
 </template>
@@ -376,7 +379,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 export default defineComponent({
-  name: "Home",
+  name: "About",
   setup() {
     const socialLinks = ref([
       {
