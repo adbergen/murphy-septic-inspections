@@ -41,8 +41,7 @@
         >
           <q-route-tab label="Home" to="/" exact />
           <q-route-tab label="About" to="/about" exact />
-          <q-route-tab label="Buyers" to="/buyers" exact />
-          <q-route-tab label="Homeowners" to="/homeowners" exact />
+          <q-route-tab label="Services" to="/services" exact />
           <q-route-tab label="Contact" to="/contact" exact />
         </q-tabs>
       </div>

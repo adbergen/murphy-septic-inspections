@@ -4,7 +4,7 @@
       <!-- Parallax with Header -->
       <div class="row q-pa-xl">
         <div
-          class="q-pa-xl q-mt-xl text-grey-9 text-center col-12 vertical-center flex flex-center"
+          class="q-pa-xl text-grey-9 text-center col-12 vertical-center flex flex-center"
           style="letter-spacing: 0.05em"
         >
           <q-intersection

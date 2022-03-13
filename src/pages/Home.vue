@@ -4,7 +4,7 @@
     <div class="landing-image">
       <div class="row q-pa-xl">
         <div
-          class="q-pa-xl q-mt-xl text-grey-9 text-center col-8 vertical-center flex flex-center"
+          class="q-pa-xl text-grey-9 text-center col-8 vertical-center flex flex-center"
           style="letter-spacing: 0.05em"
         >
           <q-intersection
@@ -120,7 +120,7 @@
     </div>
     <div class="q-px-xl bg-green">
       <div class="row q-pa-xl q-mx-xl">
-                <div class="col-4 q-pa-xl">
+        <div class="col-4 q-pa-xl">
           <q-card flat>
             <q-img :ratio="16 / 9" src="../assets/HomeownersCard.png" />
             <div class="bg-grey-1">
