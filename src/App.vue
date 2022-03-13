@@ -1,5 +1,5 @@
-<template>
-  <router-view />
+<template >
+  <router-view class="fonting" />
 </template>
 <script>
 import { defineComponent } from 'vue';

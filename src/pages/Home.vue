@@ -1,21 +1,54 @@
 <template>
-  <q-page>
-    <!-- Parallax with Header -->
-    <div class="q-pb-md row">
-      <q-img width="100%" height="960px" src="../assets/LandingBackground.png">
-        <h1
-          class="text-white text-weight-bold row justify-center full-height full-width text-center items-center q-my-xl"
-          style="line-height: 1.2; letter-spacing: 0.05em"
+  <q-page class="fonting">
+    <!-- Landing View -->
+    <div class="landing-image">
+      <div class="row q-pa-xl">
+        <div
+          class="q-pa-xl q-mt-xl text-grey-9 text-center col-8 vertical-center flex flex-center"
+          style="letter-spacing: 0.05em"
         >
-          Qualified Residential <br />Septic System Inspections
-          <br /><br />Serving All of New Jersey
-        </h1>
-      </q-img>
+          <div class="text-h2 text-weight-bold flex flex-center">
+            Septic System Inspections
+          
+          <br/><div class="text-green-9 text-weight-bold text-h4">
+            Serving All of New Jersey
+            </div>
+          </div>
+        </div>
+        <!-- Callback Card -->
+        <div class="q-pa-xl flex flex-center q-mt-xl col-4">
+          <q-card class="q-pa-md">
+            <q-card-section>
+              <div class="text-h6 text-weight-bold text-green-9">
+                Request a callback
+              </div>
+            </q-card-section>
+
+            <q-card-section>
+              <q-input label="Name" class="q-px-xl" outlined />
+            </q-card-section>
+            <q-card-section>
+              <q-input label="Email Address" class="q-px-xl" outlined />
+            </q-card-section>
+            <q-card-section>
+              <q-input label="Phone Number" class="q-px-xl" outlined />
+            </q-card-section>
+
+            <q-card-actions class="q-px-xl">
+              <q-btn class="col-12 bg-green-9 text-white" flat>Submit</q-btn>
+            </q-card-actions>
+            <q-card-section class="text-body1 text-center">
+              Our team will be in touch as soon as possible to discuss your
+              needs.
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
     </div>
 
     <!-- About Section -->
     <div
-      class="row text-center justify-center text-h3 text-green-10 q-pt-xl text-weight-bold"
+      class="row q-pt-xl text-center justify-center text-h3 text-green-10 text-weight-bold"
     >
       Buying or Selling Your Home?
     </div>
@@ -65,50 +98,132 @@
         </div>
       </div>
     </div>
-    <div class="row q-pa-xl">
-      <div class="col-6 q-pa-xl">
-        <q-card class="col-6 q-pa-lg transparent no-shadow">
-          <q-card-section class="col-7 flex flex-center">
-            <q-img
-              width="70"
-              class="rounded-borders"
-              src="../assets/HomeownersCard.png"
-            />
-          </q-card-section>
-        </q-card>
-      </div>
-      <div class="col-6 q-pa-xl">
-        <q-card class="col-6 q-pa-lg transparent no-shadow">
-          <q-card-section class="col-7 flex flex-center">
-            <q-img
-              width="70"
-              class="rounded-borders"
-              src="../assets/NewRealEstateCard.png"
-            />
-          </q-card-section>
-        </q-card>
-      </div>
-      <div class="col-6 q-pa-xl">
-        <q-card class="col-6 q-pa-lg transparent no-shadow">
-          <q-card-section class="col-7 flex flex-center">
-            <q-img
-              width="70"
-              class="rounded-borders"
-              src="../assets/AboutCard.png"
-            />
-          </q-card-section>
-        </q-card>
-      </div>
-      <div class="col-6 q-pa-xl">
-        <q-card class="col-6 q-pa-lg transparent no-shadow">
-          <q-card-section class="col-7 flex flex-center">
-            <q-img
-              width="70"
-              class="rounded-borders"
-              src="../assets/ContactCard.png"
-            />
-          </q-card-section>
-        </q-card>
+    <div class="q-pa-xl">
+      <div class="row q-pa-xl q-mx-xl">
+        <div class="col-4 q-pa-xl">
+          <q-card
+            @click="toAbout"
+            class="cursor-pointer q-hoverable"
+            v-ripple
+            clickable
+            to="/about"
+            flat
+          >
+            <span class="q-focus-helper"></span>
+            <q-img :ratio="16 / 9" src="../assets/AboutCard.png" />
+            <div class="bg-grey-1">
+              <q-card-section>
+                <q-btn
+                  fab
+                  color="green-10"
+                  icon="info"
+                  class="absolute"
+                  style="
+                    top: 0;
+                    right: 50%;
+                    left: 46%;
+                    transform: translateY(-50%);
+                  "
+                />
+                <q-card-section class="text-h5 text-center">
+                  <div>For Current Homeowners</div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none text-center text-subtitle1">
+                  <div>
+                    An onsite wastewater treatment and disposal system, or
+                    Septic System, may be the most expensive single component of
+                    your home. For home sellers, a pre-listing inspection can
+                    ensure that there are no surprises once their home is put on
+                    the market. Read more...
+                  </div>
+                </q-card-section>
+              </q-card-section>
+            </div>
+          </q-card>
+        </div>
+        <div class="col-4 q-pa-xl">
+          <q-card
+            @click="toAbout"
+            class="cursor-pointer q-hoverable"
+            v-ripple
+            clickable
+            to="/about"
+            flat
+          >
+            <span class="q-focus-helper"></span>
+            <q-img :ratio="16 / 9" src="../assets/HomeownersCard.png" />
+            <div class="bg-grey-1">
+              <q-card-section>
+                <q-btn
+                  fab
+                  color="green-10"
+                  icon="info"
+                  class="absolute"
+                  style="
+                    top: 0;
+                    right: 50%;
+                    left: 46%;
+                    transform: translateY(-50%);
+                  "
+                />
+                <q-card-section class="text-h5 text-center">
+                  <div>About Murphy's</div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none text-center text-subtitle1">
+                  <div>
+                    Complete system inspections are done for several reasons and
+                    we perform residential septic system inspections for both
+                    current homeowners and prospective real estate purchasers.
+                    Read more...
+                  </div>
+                </q-card-section>
+              </q-card-section>
+            </div>
+          </q-card>
+        </div>
+        <div class="col-4 q-pa-xl">
+          <q-card
+            @click="toAbout"
+            class="cursor-pointer q-hoverable"
+            v-ripple
+            clickable
+            to="/about"
+            flat
+          >
+            <span class="q-focus-helper"></span>
+            <q-img :ratio="16 / 9" src="../assets/ContactCard.png" />
+            <div class="bg-grey-1">
+              <q-card-section>
+                <q-btn
+                  fab
+                  color="green-10"
+                  icon="info"
+                  class="absolute"
+                  style="
+                    top: 0;
+                    right: 50%;
+                    left: 46%;
+                    transform: translateY(-50%);
+                  "
+                />
+                <q-card-section class="text-h5 text-center">
+                  <div>Contact</div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none text-center text-subtitle1">
+                  <div>
+                    Feel confident choosing Murphy's Septic Inspections. Buying
+                    or selling, we do not offer any type of septic repair work
+                    so you do not have to worry about Murphy's finding problems
+                    that don't exist.
+                  </div>
+                </q-card-section>
+              </q-card-section>
+            </div>
+          </q-card>
+        </div>
       </div>
     </div>
 
@@ -140,7 +255,7 @@
               </q-card>
             </q-intersection>
           </div>
-          <div class="col-6 text-body1 q-px-xl">
+          <div class="col-6 text-body1 q-px-xl flex flex-center">
             <q-intersection
               once
               v-for="index in 1"
@@ -193,16 +308,14 @@
             Jersey by XXXX and follow the reporting standards of the NJ DEP
             strictly. Typically, our wastewater treatment system inspections
             start by obtaining the septic system designs from your local
-            authority. We then head out to mark the underground utilities which
-            ensures that no buried cables, pipes, or wires will be damaged and
-            no utilities such as gas, electricity, cable, or telephone will be
-            disrupted when digging is involved.<br /><br />
+            authority. If an escavator or additional equipment is necessary, our
+            partners can provide this service as at an additional cost.<br /><br />
             Depending on the type of inspection, some septics require extensive
             digging due to various components being very deep and difficult to
             find. The underground utilities must be marked out, whether digging
-            is done with a shovel or a machine. We will advise you ahead of time
-            what to expect, ask you to fill out a maintenance history
-            questionnaire, and confirm with you before arrival.<br /><br />
+            is done with a machine. We will advise you ahead of time what to
+            expect, ask you to fill out a maintenance history questionnaire, and
+            confirm with you before arrival.<br /><br />
             If heavier machinery is needed, our inspectors are capable of
             handling it with the most precise movements, leaving as little of an
             impact as possible while also making sure the system is running as
@@ -219,7 +332,7 @@
             class="example-item"
           >
             septic systems and components of the system. The inspection process
-            is usually quick but may take up to 3 hours to complete.<br /><br />
+            is usually quick but may take up to 2 hours to complete.<br /><br />
             We then open the septic tank, check the levels, and use an
             underground inline camera to inspect the connecting lines. We
             excavate down to the aggregate in the absorption area to inspect the
@@ -401,11 +514,24 @@ export default defineComponent({
       text: ref(""),
     };
   },
+  methods: {
+    toAbout() {
+      this.$router.push({
+        path: `/about`,
+      });
+    },
+  },
 });
 </script>
 
 <style>
 textarea {
   resize: none !important; /* this will disable resize for all textarea elements.  */
+}
+
+.landing-image {
+  background-image: url("../assets/LandingBackground.png");
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
-  <q-layout view="lhh Lpr lff">
-    <q-header class="transparent">
+  <q-layout view="lHh Lpr lff">
+    <q-header class="bg-white" >
       <q-toolbar>
         <q-toolbar-title
           class="q-ml-xl q-pt-md q-pb-md text-h4 text-weight-bold"
         >
           <q-img
-            style="height: 90px; max-width: 400px"
+            style="height: 60px; max-width: 300px"
             src="../assets/headerLogo.png"
           />
         </q-toolbar-title>
@@ -143,8 +143,3 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.q-page-container {
-  padding-top: 0 !important;
-}
-</style>
