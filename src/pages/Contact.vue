@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <div class="landing-image">
+    <div class="banner">
       <!-- Parallax with Header -->
       <div class="row q-pa-xl">
         <div
-          class="q-pa-xl text-grey-9 text-center col-12 vertical-center flex flex-center"
+          class="q-pa-xl text-white text-center col-12 vertical-center flex flex-center text-decoration"
           style="letter-spacing: 0.05em"
         >
           <q-intersection
@@ -14,21 +14,71 @@
             transition="scale"
             class="example-item"
           >
-            <div
-              class="text-h2 text-weight-bold flex flex-center"
-              style="line-height: 150%"
-            >
-              Contact
-            </div>
+            <div class="text-h3 text-weight-bold flex flex-center">Contact</div>
+            <q-separator color="white" />
           </q-intersection>
         </div>
       </div>
     </div>
 
-    <!-- Expectations Section -->
+    <!-- Contact Section -->
     <div class="q-px-xl">
       <div class="q-pa-xl row q-mx-xl">
-        <div class="col-12 text-body1 q-px-xl">
+        <div class="col-4 text-body1 q-px-xl">
+          <q-intersection
+            once
+            v-for="index in 1"
+            :key="index"
+            transition="slide-right"
+            class="example-item"
+          >
+            <q-card>
+              <q-card-section class="text-center">
+                <q-img src="../assets/headerLogo.png" />
+              </q-card-section>
+
+              <q-list>
+                <q-item>
+                  <q-item-section avatar>
+                    <q-avatar color="green-9" text-color="white" icon="email" />
+                  </q-item-section>
+                  <q-item-section class="text-h5">Email</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section class="text-body1"
+                    >info@murphysepticinspections.com</q-item-section
+                  >
+                </q-item>
+                <q-item>
+                  <q-item-section avatar>
+                    <q-avatar color="green-9" text-color="white" icon="phone" />
+                  </q-item-section>
+                  <q-item-section class="text-h5">Phone Number</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section class="text-body1"
+                    >555-555-5555</q-item-section
+                  >
+                </q-item>
+                <q-item>
+                  <q-item-section avatar>
+                    <q-avatar color="green-9" text-color="white" icon="place" />
+                  </q-item-section>
+                  <q-item-section class="text-h5">Service Area</q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section class="text-body1"
+                    >Serving all counties within New Jersey</q-item-section
+                  >
+                </q-item>
+              </q-list>
+            </q-card>
+          </q-intersection>
+        </div>
+        <div class="col-8 text-body1 q-px-xl">
           <q-intersection
             once
             v-for="index in 1"
@@ -38,7 +88,7 @@
           >
             <q-card class="q-pa-md">
               <q-card-section>
-                <div class="text-h5 text-weight-bold text-green-9">
+                <div class="text-h4 text-weight-bold text-green-9 text-center">
                   Send us a message
                 </div>
               </q-card-section>
@@ -51,6 +101,15 @@
               </q-card-section>
               <q-card-section>
                 <q-input label="Phone Number" class="q-px-xl" outlined />
+              </q-card-section>
+
+              <q-card-section>
+                <q-input
+                  label="Message"
+                  class="q-px-xl"
+                  type="textarea"
+                  outlined
+                />
               </q-card-section>
 
               <q-card-actions class="q-px-xl">
@@ -110,5 +169,10 @@ export default defineComponent({
 <style>
 textarea {
   resize: none !important; /* this will disable resize for all textarea elements.  */
+}
+.banner {
+  background-image: url("../assets/GreenBanner.png");
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
 }
 </style>

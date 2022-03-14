@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <div class="landing-image">
+    <div class="banner">
       <!-- Parallax with Header -->
       <div class="row q-pa-xl">
         <div
-          class="q-pa-xl text-grey-9 text-center col-12 vertical-center flex flex-center"
+          class="q-pa-xl text-white text-center col-12 vertical-center flex flex-center text-decoration"
           style="letter-spacing: 0.05em"
         >
           <q-intersection
@@ -14,12 +14,8 @@
             transition="scale"
             class="example-item"
           >
-            <div
-              class="text-h2 text-weight-bold flex flex-center"
-              style="line-height: 150%"
-            >
-              Services
-            </div>
+            <div class="text-h3 text-weight-bold flex flex-center">Services</div>
+            <q-separator color="white" />
           </q-intersection>
         </div>
       </div>
@@ -127,7 +123,9 @@ export default defineComponent({
 </script>
 
 <style>
-textarea {
-  resize: none !important; /* this will disable resize for all textarea elements.  */
+.banner {
+  background-image: url("../assets/GreenBanner.png");
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
 }
 </style>

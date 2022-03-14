@@ -2,26 +2,40 @@
   <q-layout view="lHh Lpr lff">
     <q-header class="bg-white">
       <q-toolbar>
-        <q-toolbar-title
-          class="q-ml-xl q-pt-md q-pb-md text-h4 text-weight-bold"
-        >
+        <q-toolbar-title class="q-ml-xl q-py-sm">
           <q-img
             style="height: 60px; max-width: 300px"
             src="../assets/headerLogo.png"
           />
         </q-toolbar-title>
-
+        <q-space />
         <q-tabs
           v-model="headerNav"
+           narrow-indicator
           indicator-color="green"
           active-color="green"
-          class="bg-transparent text-black"
+          class="bg-transparent text-black q-mr-xl q-pr-xl"
+          align="center"
         >
           <q-route-tab label="Home" to="/" exact />
           <q-route-tab label="About" to="/about" exact />
           <q-route-tab label="Services" to="/services" exact />
           <q-route-tab label="Contact" to="/contact" exact />
         </q-tabs>
+        <q-space />
+        <div class="text-center text-grey-10 q-mr-xl">
+          <q-btn
+            flat
+            v-for="link in socialLinks"
+            :key="link.name"
+            size="md"
+            :class="link.class"
+            :icon="link.name"
+            type="a"
+            :href="link.route"
+            target="__blank"
+          />
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -108,19 +122,13 @@ export default defineComponent({
   setup() {
     const socialLinks = ref([
       {
-        name: "fab fa-facebook",
+        name: "fab fa-facebook-square",
         class: "q-pa-sm",
         size: "lg",
         route: "",
       },
       {
         name: "fab fa-instagram",
-        class: "q-pa-sm",
-        size: "lg",
-        route: "",
-      },
-      {
-        name: "fab fa-twitter",
         class: "q-pa-sm",
         size: "lg",
         route: "",
@@ -140,3 +148,12 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+textarea {
+  resize: none !important; /* this will disable resize for all textarea elements.  */
+}
+.q-tab__label {
+  font-weight: bold
+}
+</style>
